@@ -31,12 +31,14 @@ namespace Aircompany
         public List<MilitaryPlane> GetMilitaryPlanes()
         {
             List<MilitaryPlane> militaryPlanes = new List<MilitaryPlane>();
-            for (int i = 0; i < Planes.Count; i++)
+            foreach (var plane in Planes)
             {
-                if (Planes[i].GetType() == typeof(MilitaryPlane))
+
+                if (plane.GetType() == typeof(MilitaryPlane))
                 {
-                    militaryPlanes.Add((MilitaryPlane)Planes[i]);
+                    militaryPlanes.Add((MilitaryPlane)plane);
                 }
+
             }
             return militaryPlanes;
         }
