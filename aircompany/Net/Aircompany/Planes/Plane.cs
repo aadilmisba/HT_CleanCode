@@ -4,46 +4,46 @@ namespace Aircompany.Planes
 {
     public abstract class Plane
     {
-        private string model;
-        private int maxSpeed;
-        private int maxFlightDistance;
-        private int maxLoadCapacity;
+        public string Model { get; private set; }
+        public int MaxSpeed { get; private set; }
+        public int MaxFlightDistance { get; private set; }
+        public int MaxLoadCapacity { get; private set; }
 
         public Plane(string model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity)
         {
-            model = model;
-            maxSpeed = maxSpeed;
-            maxFlightDistance = maxFlightDistance;
-            maxLoadCapacity = maxLoadCapacity;
+            this.Model = model;
+            this.MaxSpeed = maxSpeed;
+            this.MaxFlightDistance = maxFlightDistance;
+            this.MaxLoadCapacity = maxLoadCapacity;
         }
 
         public string GetModel()
         {
-            return model;
+            return Model;
         }
 
         public int GetMS()
         {
-            return maxSpeed;
+            return MaxSpeed;
         }
 
         public int MAXFlightDistance()
         {
-            return maxFlightDistance;
+            return MaxFlightDistance;
         }
 
         public int MAXLoadCapacity()
         {
-            return maxLoadCapacity;
+            return MaxLoadCapacity;
         }
 
         public override string ToString()
         {
             return "Plane{" +
-                "model='" + model + '\'' +
-                ", maxSpeed=" + maxSpeed +
-                ", maxFlightDistance=" + maxFlightDistance +
-                ", maxLoadCapacity=" + maxLoadCapacity +
+                "model='" + Model + '\'' +
+                ", maxSpeed=" + MaxSpeed +
+                ", maxFlightDistance=" +MaxFlightDistance +
+                ", maxLoadCapacity=" + MaxLoadCapacity +
                 '}';
         }
 
@@ -51,19 +51,19 @@ namespace Aircompany.Planes
         {
             var plane = obj as Plane;
             return plane != null &&
-                   model == plane.model &&
-                   maxSpeed == plane.maxSpeed &&
-                   maxFlightDistance == plane.maxFlightDistance &&
-                   maxLoadCapacity == plane.maxLoadCapacity;
+                   Model == plane.Model &&
+                   MaxSpeed == plane.MaxSpeed &&
+                   MaxFlightDistance == plane.MaxFlightDistance &&
+                   MaxLoadCapacity == plane.MaxLoadCapacity;
         }
 
         public override int GetHashCode()
         {
             var hashCode = -1043886837;
-            hashCode *=  -1521134295 + EqualityComparer<string>.Default.GetHashCode(model);
-            hashCode *= -1521134295 + maxSpeed.GetHashCode();
-            hashCode *= -1521134295 + maxFlightDistance.GetHashCode();
-            hashCode *= -1521134295 + maxLoadCapacity.GetHashCode();
+            hashCode *=  -1521134295 + EqualityComparer<string>.Default.GetHashCode(Model);
+            hashCode *= -1521134295 + MaxSpeed.GetHashCode();
+            hashCode *= -1521134295 + MaxFlightDistance.GetHashCode();
+            hashCode *= -1521134295 + MaxLoadCapacity.GetHashCode();
             return hashCode;
         }
 
